@@ -2,13 +2,41 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
-export default function getStaticProps(context) {
+const URL = process.env.NEXT_PUBLIC_STRAPI_API_URL;
+
+export async function getStaticProps(context) {
+  const fetchParams = {
+    method: "POST",
+    headers: {
+      "content-type": "application/json"
+    },
+    body: JSON.stringify({
+      query: `{
+      posts {
+        data {
+          attributes {
+            title
+            body
+            description
+            slug
+            publishedAt
+          }
+        }
+      }
+    }`
+    })
+  }
+
+  const res = await fetch(`${URL}/graphql`, fetchParams);
+  const data = await res.json();
+
   return {
-    props: {}
+    props: data,
   };
 }
 
-export default function Home() {
+export default function Home({data}) {
+  console.log(data);
   return (
     <div className={styles.container}>
       <Head>

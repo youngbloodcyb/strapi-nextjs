@@ -23,8 +23,7 @@
       "type": "text"
     },
     "slug": {
-      "type": "string",
-      "required": true
+      "type": "string"
     }
   }
 }
