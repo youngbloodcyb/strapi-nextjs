@@ -71,11 +71,12 @@ export async function getStaticProps({params}) {
 
 export default function Content({data}) {
     const { title, body, description, publishedAt } = data.posts.data[0].attributes;
+    const date = new Date(publishedAt).toLocaleDateString();
     return(
         <div>
             <h1>{title}</h1>
             <h3>{description}</h3>
-            <h5>{publishedAt}</h5>
+            <h5>{date}</h5>
             <p>{body}</p>
         </div>
     )
