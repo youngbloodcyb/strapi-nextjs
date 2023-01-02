@@ -47,7 +47,7 @@ export default function Home({data}) {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          {data.posts.data[0].attributes.title}
         </h1>
 
         <p className={styles.description}>
