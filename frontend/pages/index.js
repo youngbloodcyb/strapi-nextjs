@@ -56,7 +56,9 @@ export default function Home({ data }) {
         <div className={styles.grid}>
           {posts.map((post, index) => {
             const { title, description, slug } = post.attributes;
-            return <Blog key={index} title={title} description={description} slug={slug}/> 
+            return (
+              <Blog key={index} title={title} description={description} slug={slug}/> 
+            )
           })}
         </div>
       </main>
