@@ -1,7 +1,12 @@
 
 export default function handler(req, res) {
-    res.status(200).json({ name: 'John Doe' });
+    
     if (req.method === 'POST') {
-        console.log(req.body);
+        // console.log(req.body);
+        const { test, test2 } = req.body;
+        console.log(test);
+        console.log(test2);
+
+        res.status(200).json({ status: 'success' });
     }
 }
