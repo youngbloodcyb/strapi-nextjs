@@ -22,7 +22,7 @@ export async function getStaticPaths() {
 
     const res = await fetch(`${URL}/graphql`, fetchParams);
     const data = await res.json();
-    const posts = data.data.posts.data;
+    const posts = data.data.posts.data ? data.data.posts.data : null;
     
     const paths = posts.map(post => {
         return { params: { slug: post.attributes.slug }}
@@ -69,7 +69,7 @@ export async function getStaticProps({params}) {
 }
 
 export default function Content({data}) {
-    const { title, body, description, publishedAt } = data.posts.data[0].attributes;
+    const { title, body, description, publishedAt } = data.posts.data[0].attributes ? data.posts.data[0].attributes : null;
     const date = new Date(publishedAt).toLocaleDateString();
     return(
         <div>
