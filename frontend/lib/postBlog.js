@@ -1,5 +1,5 @@
 export async function postBlog({ title, description, body, slug }) {
-    const URL = "http://localhost:1337/api/posts";
+    const URL = `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/api/posts`;
 
     const raw = {
         data: {
