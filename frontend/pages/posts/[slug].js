@@ -68,15 +68,24 @@ export async function getStaticProps({params}) {
 
     const res = await fetch(`${URL}/graphql`, fetchParams);
     const data = await res.json();
+    // console.log(JSON.stringify(data))
+    const { title, body, description, publishedAt }  = data.data.posts.data[0].attributes;
+    // const post = data.data.posts.data[0].attributes;
 
     return {
-        props: data
+        props: {
+            title: title,
+            body: body,
+            description: description,
+            publishedAt: publishedAt
+        }
     }
 }
 
-const Content = ({data}) => {
+const Content = ({title, body, description, publishedAt}) => {
+    // const { title, body, description, publishedAt } = post;
     // chat gpt code 
-    const { title, body, description, publishedAt } = data.posts.data && data.posts.data[0] && data.posts.data[0].attributes ? data.posts.data[0].attributes : {};
+    // const { title, body, description, publishedAt } = data.posts.data && data.posts.data[0] && data.posts.data[0].attributes ? data.posts.data[0].attributes : {};
     
     // const { title, body, description, publishedAt } = data.posts.data[0].attributes ? data.posts.data[0].attributes : null;
     
