@@ -24,9 +24,15 @@ export async function getStaticPaths() {
     const data = await res.json();
     const posts = data.data.posts.data ? data.data.posts.data : null;
     
-    const paths = posts.map(post => {
+    //chat gpt code
+    const paths = posts && Array.isArray(posts) ? posts.map(post => {
         return { params: { slug: post.attributes.slug }}
-    })
+    }) : [];
+    
+
+    // const paths = posts.map(post => {
+    //     return { params: { slug: post.attributes.slug }}
+    // })
 
     return {
         paths: paths,
@@ -69,7 +75,11 @@ export async function getStaticProps({params}) {
 }
 
 const Content = ({data}) => {
-    const { title, body, description, publishedAt } = data.posts.data[0].attributes ? data.posts.data[0].attributes : null;
+    // chat gpt code 
+    const { title, body, description, publishedAt } = data.posts.data && data.posts.data[0] && data.posts.data[0].attributes ? data.posts.data[0].attributes : {};
+    
+    // const { title, body, description, publishedAt } = data.posts.data[0].attributes ? data.posts.data[0].attributes : null;
+    
     const date = new Date(publishedAt).toLocaleDateString();
     return(
         <div>
@@ -82,10 +92,10 @@ const Content = ({data}) => {
 }
 
 Content.defaultProps = {
-    title: null,
-    body: null,
-    description: null,
-    publishedAt: null
-}
+    title: '',
+    body: '',
+    description: '',
+    publishedAt: ''
+  };  
 
 export default Content;
