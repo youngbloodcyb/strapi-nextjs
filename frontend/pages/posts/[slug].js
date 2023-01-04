@@ -68,7 +68,7 @@ export async function getStaticProps({params}) {
     }
 }
 
-export default function Content({data}) {
+const Content = ({data}) => {
     const { title, body, description, publishedAt } = data.posts.data[0].attributes ? data.posts.data[0].attributes : null;
     const date = new Date(publishedAt).toLocaleDateString();
     return(
@@ -80,3 +80,12 @@ export default function Content({data}) {
         </div>
     )
 }
+
+Content.defaultProps = {
+    title: null,
+    body: null,
+    description: null,
+    publishedAt: null
+}
+
+export default Content;
