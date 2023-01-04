@@ -1,12 +1,16 @@
+import { postBlog } from "../../lib/postBlog";
+import { test } from "../../lib/test";
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
     
     if (req.method === 'POST') {
-        // console.log(req.body);
-        const { test, test2 } = req.body;
-        console.log(test);
-        console.log(test2);
+        const payload = req.body;
+        const response = await postBlog(payload);
+        // test(payload);
 
-        res.status(200).json({ status: 'success' });
+        res.status(200).json({
+            status: 'success',
+            res: response
+        });
     }
 }
