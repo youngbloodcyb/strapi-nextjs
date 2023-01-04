@@ -37,7 +37,6 @@ export async function getStaticProps(context) {
 }
 
 export default function Home({ data }) {
-  console.log(data);
   const posts = data.posts.data;
   
   return (
