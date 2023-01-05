@@ -50,7 +50,7 @@ export default function Home({ data }) {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          9d8.dev
+          Blog
         </h1>
 
         <div className={styles.grid}>
