@@ -79,7 +79,7 @@ export async function getStaticProps({params}) {
             description: description,
             publishedAt: publishedAt
         },
-        revalidate: 30
+        revalidate: 10
     }
 }
 
