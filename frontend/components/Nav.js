@@ -1,7 +1,7 @@
 export default function Nav() {
     return (
         <nav x-data="{ isOpen: false }" className="relative bg-white">
-            <div className="px-6 py-3 mx-auto md:flex">
+            <div className="px-6 py-3 md:flex">
                 <div className="flex items-center justify-between">
                     <div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-vector-pen" viewBox="0 0 16 16">
