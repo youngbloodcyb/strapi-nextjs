@@ -1,13 +1,17 @@
+import Link from "next/link"
+
 export default function Nav() {
     return (
         <nav x-data="{ isOpen: false }" className="relative bg-white">
             <div className="px-6 py-3 md:flex">
                 <div className="flex items-center justify-between">
                     <div>
+                    <Link href="/">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-vector-pen" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M10.646.646a.5.5 0 0 1 .708 0l4 4a.5.5 0 0 1 0 .708l-1.902 1.902-.829 3.313a1.5 1.5 0 0 1-1.024 1.073L1.254 14.746 4.358 4.4A1.5 1.5 0 0 1 5.43 3.377l3.313-.828L10.646.646zm-1.8 2.908-3.173.793a.5.5 0 0 0-.358.342l-2.57 8.565 8.567-2.57a.5.5 0 0 0 .34-.357l.794-3.174-3.6-3.6z"/>
                     <path fill-rule="evenodd" d="M2.832 13.228 8 9a1 1 0 1 0-1-1l-4.228 5.168-.026.086.086-.026z"/>
                     </svg>
+                    </Link>
                     </div>
                     <div className="flex lg:hidden">
                         <button type="button" className="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400" aria-label="toggle menu">
@@ -23,9 +27,8 @@ export default function Nav() {
                 </div>
                 <div className="absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white md:mt-0 md:p-0 md:top-0 md:relative md:opacity-100 md:translate-x-0 md:flex md:items-center md:justify-between">
                     <div className="flex flex-col px-2 -mx-4 md:flex-row md:mx-10 md:py-0">
-                        <a href="#" className="px-2.5 py-2 text-black transition-colors duration-300 transform rounded-lg md:mx-2">Home</a>
-                        <a href="#" className="px-2.5 py-2 text-black transition-colors duration-300 transform rounded-lg md:mx-2">About</a>
-                        <a href="#" className="px-2.5 py-2 text-black transition-colors duration-300 transform rounded-lg md:mx-2">Contact</a>
+                        <Link href="/posts" className="px-2.5 py-2 text-black transition-colors duration-300 transform rounded-lg md:mx-2">Posts</Link>
+                        <Link href="/about" className="px-2.5 py-2 text-black transition-colors duration-300 transform rounded-lg md:mx-2">About</Link>
                     </div>
 
                     <div className="relative mt-4 md:mt-0">
