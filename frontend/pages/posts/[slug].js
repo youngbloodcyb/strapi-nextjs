@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Nav from "
 
 const URL = process.env.NEXT_PUBLIC_STRAPI_API_URL;
 
@@ -30,11 +31,6 @@ export async function getStaticPaths() {
     const paths = posts && Array.isArray(posts) ? posts.map(post => {
         return { params: { slug: post.attributes.slug }}
     }) : [];
-    
-
-    // const paths = posts.map(post => {
-    //     return { params: { slug: post.attributes.slug }}
-    // })
 
     return {
         paths: paths,
@@ -88,16 +84,16 @@ export async function getStaticProps({params}) {
 const Content = ({title, body, description, publishedAt}) => {
     const date = new Date(publishedAt).toLocaleDateString();
     return(
-        <article className="mx-56 px-6 py-24 space-y-12 text-black">
+        <article className="mx-6 md:mx-36 lg:mx-56 px-6 py-24 space-y-12 text-black">
             <div className="w-full mx-auto space-y-4 text-center">
                 <p className="text-xs font-semibold tracking-wider uppercase">#TOPIC</p>
-                <h1 className="text-4xl font-bold leading-tight md:text-5xl">{title}</h1>
+                <h1 className="text-2xl md:text-4xl font-bold leading-tight lg:text-5xl">{title}</h1>
                 <p className="text-sm">Published {date}</p>
             </div>
             <div className="pt-12 border-t border-gray-700">
-                <p className="text-center text-lg">{description}</p>
+                <p className="text-center italic text-base lg:text-lg">{description}</p>
             </div>
-            <div className="text-lg">
+            <div className="text-base lg:text-lg">
                 <p>{body}</p>
             </div>
             <div className="pt-12 border-t dark:border-gray-700">
