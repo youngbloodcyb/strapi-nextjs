@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Blog({title, slug, description, publishedAt}) {
     const date = new Date(publishedAt).toLocaleDateString();
     return (
-        <div className="text-black bg-white rounded-lg transition-all duration-300 ease-in-out hover:p-2 border border-black">
+        <div className="text-black bg-white rounded-lg transition-all duration-300 ease-in-out hover:p-2 border border-black w-full">
             <Link href={`/posts/${slug}`}>
                 <div className="max-w-4xl px-10 py-6 mx-auto rounded-lg bg-white">
                     <div className="flex items-center justify-between">

@@ -88,22 +88,22 @@ export async function getStaticProps({params}) {
 const Content = ({title, body, description, publishedAt}) => {
     const date = new Date(publishedAt).toLocaleDateString();
     return(
-        <article className="mx-36 px-6 py-24 space-y-12 text-black">
+        <article className="mx-56 px-6 py-24 space-y-12 text-black">
             <div className="w-full mx-auto space-y-4 text-center">
                 <p className="text-xs font-semibold tracking-wider uppercase">#TOPIC</p>
                 <h1 className="text-4xl font-bold leading-tight md:text-5xl">{title}</h1>
                 <p className="text-sm">Published {date}</p>
             </div>
             <div className="pt-12 border-t border-gray-700">
-                <p className="">{description}</p>
+                <p className="text-center text-lg">{description}</p>
             </div>
-            <div className="">
+            <div className="text-lg">
                 <p>{body}</p>
             </div>
             <div className="pt-12 border-t dark:border-gray-700">
                 <div className="flex flex-col space-y-4 md:space-y-0 md:space-x-6 md:flex-row">
                     <h4 className="text-lg font-semibold">Contributor</h4>
-                    <p className="dark:text-gray-400">Sed non nibh iaculis, posuere diam vitae, consectetur neque. Integer velit ligula, semper sed nisl in, cursus commodo elit. Pellentesque sit amet mi luctus ligula euismod lobortis ultricies et nibh.</p>
+                    <p className="dark:text-gray-400">Click to learn more about our post contributors.</p>
                 </div>
             </div>
                 <div className="flex justify-center pt-4 space-x-4 align-center">
