@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Nav from "
 
 const URL = process.env.NEXT_PUBLIC_STRAPI_API_URL;
 
