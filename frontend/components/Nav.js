@@ -2,9 +2,9 @@ import Link from "next/link"
 
 export default function Nav() {
     return (
-        <header aria-label="Site Header" className="shadow-sm mb-10">
+        <header aria-label="Site Header" className="mb-10">
         <div
-            className="mx-56 flex h-16 max-w-screen-xl items-center justify-between px-4"
+            className="md:mx-32 lg:mx-56 flex h-16 max-w-screen-xl items-center justify-between px-4"
         >
             <div className="flex w-0 flex-1 lg:hidden">
             <button className="rounded-full bg-gray-100 p-2 text-gray-600" type="button">
@@ -35,7 +35,7 @@ export default function Nav() {
             <form className="mb-0 hidden lg:flex">
                 <div className="relative">
                 <input
-                    className="h-10 rounded-lg border-gray-200 pr-10 text-sm placeholder-gray-300 focus:z-10"
+                    className="h-10 rounded-lg border-gray-200 pr-10 text-sm placeholder-gray-300 focus:z-10 focus:bgtext-gray-600 px-4 focus:ring-violet-400"
                     placeholder="Search..."
                     type="text"
                 />
@@ -100,7 +100,7 @@ export default function Nav() {
 
             <a
                 href="#"
-                className="rounded-lg bg-white px-5 py-2 text-sm font-medium text-black hover:border-violet-400"
+                className="rounded-lg bg-white px-5 py-2 text-sm font-medium text-gray-600 hover:border-solid hover:border-violet-400 border-2 border-gray-100"
             >
                 Sign up
             </a>
