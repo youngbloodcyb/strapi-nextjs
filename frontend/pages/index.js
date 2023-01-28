@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Blog from '../components/Blog';
 import Nav from '../components/Nav';
 import Social from '../components/Social';
+import Hero from '../components/Hero';
 
 const URL = process.env.NEXT_PUBLIC_STRAPI_API_URL;
 
@@ -51,6 +52,7 @@ export default function Home({ data }) {
       </Head>
       <Nav/>
       <main className="flex flex-col items-center">
+        <Hero/>
         <h1 className="text-6xl font-bold lowercase lg:w-2/3 md:w-3/4 w-full mb-10">
           Top Articles
         </h1>
