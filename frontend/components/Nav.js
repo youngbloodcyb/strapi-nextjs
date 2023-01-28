@@ -23,8 +23,8 @@ export default function Nav() {
             aria-label="Site Nav"
             className="hidden items-center justify-end gap-8 text-sm font-medium lg:flex lg:w-0 lg:flex-1"
             >
-            <Link className="text-gray-900" href="/posts">Posts</Link>
-            <Link className="text-gray-900" href="/about">About</Link>
+            <Link className="text-gray-900" href="/posts">posts</Link>
+            <Link className="text-gray-900" href="/about">about</Link>
             </nav>
         </div>
 
@@ -32,8 +32,8 @@ export default function Nav() {
             <nav
             className="flex items-center justify-center overflow-x-auto p-4 text-sm font-medium"
             >
-            <a className="flex-shrink-0 pl-4 text-gray-900" href="">Posts</a>
-            <a className="flex-shrink-0 pl-4 text-gray-900" href="">About</a>
+            <Link className="flex-shrink-0 pl-4 text-gray-900" href="/posts">posts</Link>
+            <Link className="flex-shrink-0 pl-4 text-gray-900" href="/about">about</Link>
             </nav>
         </div>
         </header>
