@@ -3,6 +3,7 @@ import Image from 'next/image'
 // import styles from '../styles/Home.module.css'
 import Blog from '../components/Blog';
 import Nav from '../components/Nav';
+import Social from '../components/Social';
 
 const URL = process.env.NEXT_PUBLIC_STRAPI_API_URL;
 
@@ -63,6 +64,9 @@ export default function Home({ data }) {
           })}
         </div>
       </main>
+      <footer className="my-6">
+        <Social/>
+      </footer>
     </div>
   )
 }

@@ -2,9 +2,9 @@ import Link from "next/link"
 
 export default function Nav() {
     return (
-        <header aria-label="Site Header" className="shadow-sm">
+        <header aria-label="Site Header" className="shadow-sm mb-10">
         <div
-            className="mx-auto flex h-16 max-w-screen-xl items-center justify-between px-4"
+            className="mx-56 flex h-16 max-w-screen-xl items-center justify-between px-4"
         >
             <div className="flex w-0 flex-1 lg:hidden">
             <button className="rounded-full bg-gray-100 p-2 text-gray-600" type="button">
@@ -20,7 +20,7 @@ export default function Nav() {
                     d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeWidth="2"
                 ></path>
                 </svg>
             </button>
@@ -100,7 +100,7 @@ export default function Nav() {
 
             <a
                 href="#"
-                className="rounded-lg bg-blue-600 px-5 py-2 text-sm font-medium text-white"
+                className="rounded-lg bg-white px-5 py-2 text-sm font-medium text-black hover:border-violet-400"
             >
                 Sign up
             </a>
